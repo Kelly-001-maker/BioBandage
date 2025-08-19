@@ -1,0 +1,593 @@
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===========================
+   HEADER + NAVIGATION
+=========================== */
+header {
+  background: linear-gradient(90deg, #2e7d32, #1b5e20); /* Green eco look */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* TEXT LOGO */
+/*
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+} */
+
+/* IMAGE LOGO */
+header .logo img {
+  height: 40px;   /* adjust size */
+  width: auto;    /* keep proportions */
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.logo span {
+  color: #ffcc00; /* Honey accent */
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  font-weight: 500;
+  transition: color 0.3s ease;
+  color: white;
+}
+
+nav ul li a:hover {
+  color: #ff5722; /* Turmeric red-orange */
+}
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+/* Always show the menu icon */
+.menu-toggle {
+  opacity: 1;            /* fully visible */
+  cursor: pointer;
+  display: none;         /* hidden on large screens */
+  font-size: 28px;       /* make it easy to tap */
+  transition: opacity 0.3s ease;
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    color: white;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background: #1b5e20;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  /* Hero styling for media*/
+    .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+    .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+.hero {
+  background: linear-gradient(rgba(27, 94, 32, 0.7), rgba(27, 94, 32, 0.7)),
+              url("../images/hero-bg.jpg") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  background: #ffcc00; /* Honey gold */
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  color: #222;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hero-btn:hover {
+  background: #ffb300;
+  transform: scale(1.05);
+}
+
+
+/* ===========================
+   PRODUCT SECTION
+=========================== */
+.product {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.product .container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.product h2 {
+  font-size: 2.2rem;
+  color: #1b5e20;
+  margin-bottom: 15px;
+}
+
+.section-intro {
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #444;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.feature-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.feature-card img {
+  width: 70px;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+
+/* ===========================
+   SUSTAINABILITY SECTION
+=========================== */
+.sustainability {
+  background: #f9fff9; /* soft green tint */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.sustainability h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #2d6a4f; /* deep green */
+}
+
+.sustainability .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  color: #444;
+}
+
+.sustainability-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.sustainability-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.sustainability .card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 300px;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sustainability .card img {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.sustainability .card h3 {
+  color: #1b4332; /* dark green */
+  margin-bottom: 15px;
+}
+
+.sustainability .card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.sustainability .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+
+/* ===========================
+   MISSION AND VISIO SECTION
+=========================== */
+
+.mission-vision {
+  background: #f9f9f9;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.mission-vision h2 {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #2c3e50;
+}
+
+.mv-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.mv-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  flex: 1 1 400px;
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.mv-card .icon {
+  margin-bottom: 20px;
+  color: #27ae60;
+}
+
+.mv-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.mv-card p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+
+/* ===========================
+   TEAM SECTION
+=========================== */
+.team-section {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #2e7d32; /* eco green */
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.team-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 18px rgba(0,0,0,0.15);
+}
+
+.team-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.team-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #2e7d32; /* eco green border */
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-image img {
+  transform: scale(1.05);
+}
+
+.team-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #c62828; /* red accent */
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.team-bio {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+/* CONTACT SECTION*/
+.contact-section {
+  padding: 60px 20px;
+  background: #f0fdf4; /* light eco green background */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1b5e20;
+}
+
+.section-subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #388e3c;
+  font-size: 1rem;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2e7d32;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #1b5e20;
+}
+
+.contact-info {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* ===================== FOOTER ===================== */
+.footer {
+  background: #1a1a1a;
+  color: #ddd;
+  padding: 60px 20px 20px;
+}
+
+.footer .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-brand h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ffcc33;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffcc33;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social .icon {
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social .icon:hover {
+  transform: scale(1.2);
+  color: #ffcc33;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+
