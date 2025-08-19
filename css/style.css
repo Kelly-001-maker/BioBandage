@@ -37,7 +37,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 10px 40px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -53,10 +53,11 @@ header {
 
 /* IMAGE LOGO */
 header .logo img {
-  height: 40px;   /* adjust size */
+  height: 70px;   /* adjust size */
   width: auto;    /* keep proportions */
   vertical-align: middle;
   display: inline-block;
+  margin: 0px;
   margin-right: 10px;
 }
 
@@ -133,8 +134,8 @@ nav ul li a:hover {
    HERO SECTION
 =========================== */
 .hero {
-  background: linear-gradient(rgba(27, 94, 32, 0.7), rgba(27, 94, 32, 0.7)),
-              url("../images/hero-bg.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(27, 94, 32, 0.7), rgba(27, 94, 32, 0.2)),
+              url("../images/background.jpg") center/cover no-repeat;
   height: 100vh;
   display: flex;
   justify-content: center;
